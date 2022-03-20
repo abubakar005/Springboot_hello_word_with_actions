@@ -3,9 +3,7 @@
 
 name: Maven Package
 
-on:
-  release:
-    types: [created]
+on: push
 
 jobs:
   build:
@@ -31,4 +29,5 @@ jobs:
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
       env:
+        DEFAULT_BRANCH: main
         GITHUB_TOKEN: ${{ github.token }}
