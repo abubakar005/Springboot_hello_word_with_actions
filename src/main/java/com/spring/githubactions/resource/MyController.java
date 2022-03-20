@@ -11,4 +11,9 @@ public class MyController {
         return "Hello Word";
     }
 
+    @GetMapping("/test")
+    public String test() {
+        return "Test API is called...";
+    }
+
 }
